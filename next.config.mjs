@@ -9,6 +9,9 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  output: 'export',
+  basePath: '/rama-porto',
+  assetPrefix: '/rama-porto/',
 }
 
 export default nextConfig
