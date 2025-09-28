@@ -137,11 +137,6 @@ body {
     line-height: 1.2;
 }
 
-.hero-title .highlight {
-    color: #fbbf24;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
 .hero-subtitle {
     font-size: 1.5rem;
     color: rgba(255, 255, 255, 0.9);
