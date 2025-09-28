@@ -863,29 +863,27 @@ html {
 
 /* Modal Styles */
 .modal {
-    display: none; /* Modal disembunyikan secara default */
+    display: none;
     position: fixed;
-    z-index: 9999; /* Pastikan modal ada di atas elemen lainnya */
+    z-index: 9999;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.8); /* Latar belakang gelap */
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background */
     padding-top: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
     opacity: 0;
-    transition: opacity 0.3s ease-in-out; /* Efek transisi untuk perubahan opacity */
+    transition: opacity 0.3s ease-in-out;
 }
-
 
 .modal-content {
     margin: auto;
     display: block;
-    width: 80%; /* Ukuran gambar menjadi lebih besar */
-    max-width: 900px; /* Maksimal ukuran gambar */
+    width: 80%; /* Larger image */
+    max-width: 900px; /* Maximum image width */
 }
 
 #caption {
@@ -893,11 +891,10 @@ html {
     color: #ccc;
     font-size: 18px;
     padding: 10px;
-    margin-top: 20px; /* Memberikan jarak antara gambar dan deskripsi */
-    font-style: italic; /* Memberikan gaya italic untuk deskripsi */
+    margin-top: 20px;
+    font-style: italic;
 }
 
-/* Close button */
 .close {
     position: absolute;
     top: 15px;
@@ -914,6 +911,7 @@ html {
     text-decoration: none;
     cursor: pointer;
 }
+
 
 
 /* Deskripsi modal */
