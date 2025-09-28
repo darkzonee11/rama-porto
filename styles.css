@@ -870,6 +870,7 @@ html {
     transition: opacity 0.3s ease-in-out; /* Efek transisi untuk perubahan opacity */
 }
 
+
 .modal-content {
     margin: auto;
     display: block;
