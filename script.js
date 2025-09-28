@@ -137,15 +137,34 @@ window.addEventListener('load', () => {
     }, 500);
 });
 
-// Portfolio item click handling
-document.querySelectorAll('.portfolio-item').forEach(item => {
-    item.addEventListener('click', () => {
-        const title = item.querySelector('.portfolio-overlay h3').textContent;
-        const description = item.querySelector('.portfolio-overlay p').textContent;
-        
-        // You can add modal functionality here or redirect to detailed portfolio pages
-        alert(`${title}\n\n${description}\n\nFitur detail portfolio akan segera ditambahkan!`);
+// Portfolio item click handling (Modal for images)
+const portfolioImages = document.querySelectorAll('.portfolio-image img');
+
+// Ambil elemen modal dan elemen terkait
+const modal = document.getElementById('imageModal');
+const modalImage = document.getElementById('modalImage');
+const caption = document.getElementById('caption');
+const closeModal = document.getElementById('closeModal');
+
+// Saat gambar diklik, tampilkan modal dengan gambar besar
+portfolioImages.forEach(img => {
+    img.addEventListener('click', (e) => {
+        modal.style.display = "block";
+        modalImage.src = e.target.src;  // Menampilkan gambar yang diklik dalam modal
+        caption.innerHTML = e.target.alt; // Menampilkan teks deskripsi gambar
     });
+});
+
+// Menutup modal ketika klik tombol close
+closeModal.addEventListener('click', () => {
+    modal.style.display = "none";
+});
+
+// Menutup modal ketika klik di luar gambar
+window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        modal.style.display = "none";
+    }
 });
 
 // Smooth reveal animation for timeline items
@@ -265,35 +284,4 @@ if ('IntersectionObserver' in window) {
     document.querySelectorAll('img[data-src]').forEach(img => {
         imageObserver.observe(img);
     });
-
-    // Ambil elemen gambar di portfolio
-const portfolioImages = document.querySelectorAll('.portfolio-image img');
-
-// Ambil elemen modal dan elemen terkait
-const modal = document.getElementById('imageModal');
-const modalImage = document.getElementById('modalImage');
-const caption = document.getElementById('caption');
-const closeModal = document.getElementById('closeModal');
-
-// Saat gambar diklik, tampilkan modal dengan gambar besar
-portfolioImages.forEach(img => {
-    img.addEventListener('click', (e) => {
-        modal.style.display = "block";
-        modalImage.src = e.target.src;  // Menampilkan gambar yang diklik dalam modal
-        caption.innerHTML = e.target.alt; // Menampilkan teks deskripsi gambar
-    });
-});
-
-// Menutup modal ketika klik tombol close
-closeModal.addEventListener('click', () => {
-    modal.style.display = "none";
-});
-
-// Menutup modal ketika klik di luar gambar
-window.addEventListener('click', (e) => {
-    if (e.target === modal) {
-        modal.style.display = "none";
-    }
-});
-    
 }
