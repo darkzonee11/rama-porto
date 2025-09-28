@@ -456,6 +456,9 @@ section {
 
 .portfolio-item {
     position: relative;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -483,6 +486,7 @@ section {
     transform: scale(1.1);
 }
 
+/* Judul tetap di dalam overlay */
 .portfolio-overlay {
     position: absolute;
     bottom: 0;
@@ -490,12 +494,8 @@ section {
     right: 0;
     background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
     color: white;
-    padding: 30px 20px 20px;
-    z-index: 1; /* Pastikan overlay berada di atas gambar */
-}
-
-.portfolio-item:hover .portfolio-overlay {
-    transform: translateY(0);
+    padding: 20px;
+    z-index: 1;
 }
 
 .portfolio-overlay h3 {
@@ -503,17 +503,11 @@ section {
     margin-bottom: 10px;
 }
 
-.portfolio-overlay p {
-    font-size: 0.9rem;
-    opacity: 0.9;
-}
-
-/* Teks penjelasan di luar kotak gambar */
+/* Deskripsi gambar berada di luar kotak gambar */
 .portfolio-description {
-    padding: 10px;
+    padding: 15px;
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
     margin-top: 10px;
     font-size: 16px;
     color: #333;
