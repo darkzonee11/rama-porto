@@ -863,20 +863,25 @@ html {
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.8);
     padding-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .modal-content {
     margin: auto;
     display: block;
-    width: 80%;
-    max-width: 700px;
+    width: 80%; /* Ukuran gambar menjadi lebih besar */
+    max-width: 900px; /* Maksimal ukuran gambar */
 }
 
 #caption {
     text-align: center;
     color: #ccc;
-    font-size: 20px;
+    font-size: 18px;
     padding: 10px;
+    margin-top: 20px; /* Memberikan jarak antara gambar dan deskripsi */
+    font-style: italic; /* Memberikan gaya italic untuk deskripsi */
 }
 
 .close {
@@ -895,3 +900,4 @@ html {
     text-decoration: none;
     cursor: pointer;
 }
+
