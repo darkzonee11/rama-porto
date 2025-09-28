@@ -152,20 +152,39 @@ portfolioImages.forEach(img => {
         modal.style.display = "block";
         modalImage.src = e.target.src;  // Menampilkan gambar yang diklik dalam modal
         caption.innerHTML = e.target.alt; // Menampilkan teks deskripsi gambar
+
+        // Mendapatkan deskripsi dari elemen p di bawah gambar
+        const description = e.target.closest('.portfolio-image').querySelector('.portfolio-description').textContent;
+        const descriptionElement = document.createElement('p');
+        descriptionElement.classList.add('modal-description');
+        descriptionElement.textContent = description;
+
+        // Tambahkan deskripsi ke modal setelah gambar
+        modal.appendChild(descriptionElement);
     });
 });
 
 // Menutup modal ketika klik tombol close
 closeModal.addEventListener('click', () => {
     modal.style.display = "none";
+    // Menghapus deskripsi modal setelah ditutup
+    const descriptionElement = modal.querySelector('.modal-description');
+    if (descriptionElement) {
+        descriptionElement.remove();
+    }
 });
 
 // Menutup modal ketika klik di luar gambar
 window.addEventListener('click', (e) => {
     if (e.target === modal) {
         modal.style.display = "none";
+        const descriptionElement = modal.querySelector('.modal-description');
+        if (descriptionElement) {
+            descriptionElement.remove();
+        }
     }
 });
+
 
 
 // Smooth reveal animation for timeline items
