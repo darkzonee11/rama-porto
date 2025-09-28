@@ -901,3 +901,12 @@ html {
     cursor: pointer;
 }
 
+/* Deskripsi modal */
+.modal-description {
+    text-align: center;
+    color: #ccc;
+    font-size: 18px;
+    padding: 10px;
+    margin-top: 20px; /* Memberikan jarak antara gambar dan deskripsi */
+    font-style: italic; /* Memberikan gaya italic untuk deskripsi */
+}
