@@ -143,60 +143,33 @@ window.onload = () => {
     modal.style.display = "none"; // Modal disembunyikan pada saat halaman dimuat
 };
 
-// Portfolio item click handling (Modal for images)
+// Modal functionality for portfolio images
 const portfolioImages = document.querySelectorAll('.portfolio-image img');
-
-// Ambil elemen modal dan elemen terkait
 const modal = document.getElementById('imageModal');
 const modalImage = document.getElementById('modalImage');
 const caption = document.getElementById('caption');
 const closeModal = document.getElementById('closeModal');
 
-// Saat gambar diklik, tampilkan modal dengan gambar besar
+// Show the modal when a portfolio image is clicked
 portfolioImages.forEach(img => {
     img.addEventListener('click', (e) => {
-        modal.style.display = "flex";  // Gunakan "flex" untuk memastikan modal muncul
-        modal.style.opacity = 1; // Pastikan modal tidak transparan
-
-        modalImage.src = e.target.src;  // Menampilkan gambar yang diklik dalam modal
-        caption.innerHTML = e.target.alt; // Menampilkan teks deskripsi gambar
-
-        // Mendapatkan deskripsi dari elemen p di bawah gambar
-        const description = e.target.closest('.portfolio-image').querySelector('.portfolio-description').textContent;
-        const descriptionElement = document.createElement('p');
-        descriptionElement.classList.add('modal-description');
-        descriptionElement.textContent = description;
-
-        // Tambahkan deskripsi ke modal setelah gambar
-        modal.appendChild(descriptionElement);
+        modal.style.display = "flex";  // Show modal
+        modalImage.src = e.target.src;  // Set the image in modal
+        caption.innerHTML = e.target.alt; // Set the caption in modal
     });
 });
 
-// Menutup modal ketika klik tombol close
+// Close the modal when close button is clicked
 closeModal.addEventListener('click', () => {
     modal.style.display = "none";
-    modal.style.opacity = 0; // Pastikan modal menghilang dengan efek transisi
-    // Menghapus deskripsi modal setelah ditutup
-    const descriptionElement = modal.querySelector('.modal-description');
-    if (descriptionElement) {
-        descriptionElement.remove();
-    }
 });
 
-// Menutup modal ketika klik di luar gambar
+// Close the modal when clicking outside of the image
 window.addEventListener('click', (e) => {
     if (e.target === modal) {
         modal.style.display = "none";
-        modal.style.opacity = 0; // Pastikan modal menghilang dengan efek transisi
-        const descriptionElement = modal.querySelector('.modal-description');
-        if (descriptionElement) {
-            descriptionElement.remove();
-        }
     }
 });
-
-
-
 
 // Smooth reveal animation for timeline items
 const timelineObserver = new IntersectionObserver((entries) => {
