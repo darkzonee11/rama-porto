@@ -137,6 +137,12 @@ window.addEventListener('load', () => {
     }, 500);
 });
 
+// Pastikan modal tidak muncul secara otomatis saat halaman pertama kali dimuat
+window.onload = () => {
+    const modal = document.getElementById('imageModal');
+    modal.style.display = "none"; // Modal disembunyikan pada saat halaman dimuat
+};
+
 // Portfolio item click handling (Modal for images)
 const portfolioImages = document.querySelectorAll('.portfolio-image img');
 
@@ -188,6 +194,7 @@ window.addEventListener('click', (e) => {
         }
     }
 });
+
 
 
 
