@@ -167,6 +167,7 @@ window.addEventListener('click', (e) => {
     }
 });
 
+
 // Smooth reveal animation for timeline items
 const timelineObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
